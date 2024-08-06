@@ -17,7 +17,6 @@ public class InputService : MonoBehaviour, IInputService
         {
             CheakAlphaKey();
             CheakWASDKey();
-            CheakArrowKey();
         }
     }
 
@@ -44,56 +43,29 @@ public class InputService : MonoBehaviour, IInputService
 
     private void CheakWASDKey()
     {
+        var type = MovementType.None;
+
         if (Input.GetKey(KeyCode.W))
         {
-            OnClickMovementButton?.Invoke(MovementType.Forward);
-            return;
+            type |= MovementType.Forward;
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            OnClickMovementButton?.Invoke(MovementType.Left);
-            return;
+            type |= MovementType.Left;
         }
 
         if (Input.GetKey(KeyCode.S))
         {
-            OnClickMovementButton?.Invoke(MovementType.Back);
-            return;
+            type |= MovementType.Back;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
-            OnClickMovementButton?.Invoke(MovementType.Right);
-            return;
-        }
-    }
-
-    private void CheakArrowKey()
-    {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            OnClickMovementButton?.Invoke(MovementType.Forward);
-            return;
+            type |= MovementType.Right;
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            OnClickMovementButton?.Invoke(MovementType.Left);
-            return;
-        }
-
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            OnClickMovementButton?.Invoke(MovementType.Back);
-            return;
-        }
-
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            OnClickMovementButton?.Invoke(MovementType.Right);
-            return;
-        }
+        OnClickMovementButton?.Invoke(type);
     }
 
     private void CheakMouseButton()

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -9,10 +7,16 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float LerpSpeed;
 
     [SerializeField] private float _maxAngle;
-    [SerializeField] private float _sentivity;
+    [SerializeField] private float _sentivityX;
+    [SerializeField] private float _sentivityY;
 
     private float _rotationX;
-    private float _rotationY;
+
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
     private void LateUpdate()
     {
@@ -23,11 +27,10 @@ public class CameraController : MonoBehaviour
         var mouseX = Input.GetAxis("Mouse X");
         var mouseY = Input.GetAxis("Mouse Y");
 
-        _targetTranform.SetRotation(mouseX);
+        _targetTranform.SetRotation(mouseX * _sentivityX);
 
-        _rotationX -= mouseY * _sentivity;
+        _rotationX -= mouseY * _sentivityY;
         _rotationX = Mathf.Clamp(_rotationX, -_maxAngle, _maxAngle);
-        _rotationY = _targetTranform.transform.rotation.eulerAngles.y;
         transform.localRotation = Quaternion.Euler(_rotationX, 0.0f, 0.0f);
     }
 }

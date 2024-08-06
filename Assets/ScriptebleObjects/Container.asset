@@ -15,22 +15,22 @@ MonoBehaviour:
   gunFeatures:
   - Type: 0
     Damage: 10
-    Rate: 0.3
+    Rate: 0.4
     Range: 100
     RangeFire: 0.9
     ReloadTime: 1.2
     Clip: 6
   - Type: 1
     Damage: 20
-    Rate: 0.5
+    Rate: 0.7
     Range: 150
     RangeFire: 0.95
     ReloadTime: 2
     Clip: 5
   - Type: 2
     Damage: 5
-    Rate: 0.1
+    Rate: 0.2
     Range: 90
-    RangeFire: 85
+    RangeFire: 0.85
     ReloadTime: 1.6
     Clip: 30

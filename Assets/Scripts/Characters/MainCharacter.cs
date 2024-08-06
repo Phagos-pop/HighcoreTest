@@ -1,10 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class MainCharacter : MonoBehaviour, IDamageableCharacter
+public class MainCharacter : Character
 {
     [SerializeField] private List<Weapon> _weapons;
 
@@ -32,16 +31,6 @@ public class MainCharacter : MonoBehaviour, IDamageableCharacter
         _speedMove = speedMove;
     }
 
-    public void OnChangeWeapon(WeaponType type)
-    {
-        
-    }
-
-    public void ApplyDamage(float value)
-    {
-        OnApplyDamage?.Invoke(value);
-    }
-
     public void SetMovement(Vector3 vector)
     {
         _moveVector = vector;
@@ -65,8 +54,13 @@ public class MainCharacter : MonoBehaviour, IDamageableCharacter
             return;
         }
 
-        _rigidbody.AddForce(_speedMove * Time.fixedDeltaTime * _moveVector, ForceMode.Impulse);
+        _rigidbody.AddRelativeForce(_speedMove * Time.fixedDeltaTime * _moveVector, ForceMode.Impulse);
 
         _moveVector = Vector3.zero;
+    }
+
+    public override void ApplyDamage(float value)
+    {
+        OnApplyDamage?.Invoke(value);
     }
 }
