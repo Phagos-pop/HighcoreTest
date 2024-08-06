@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using Test.Character;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    private CharacterController _characterController;
+    private MainCharacterController _characterController;
     private EnemyCharacterController _enemyCharacterController;
 
     private void Start()
     {
-        _characterController = new CharacterController();
+        _characterController = new MainCharacterController();
         _characterController.Init();
         _enemyCharacterController = new EnemyCharacterController();
         _enemyCharacterController.Init();

@@ -3555,7 +3555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _type: 0
-  _bulletPrefab: {fileID: 8257903854647857289, guid: 05073dca2a8a9a8469ddc84e03644fb0, type: 3}
+  _bulletPrefab: {fileID: 8910456188743537816, guid: 8416adaee862ba4499e37c19effad568, type: 3}
   _bulletPoint: {fileID: 1392418075}
 --- !u!1 &2139314253
 GameObject:

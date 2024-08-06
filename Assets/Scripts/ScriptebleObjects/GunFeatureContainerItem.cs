@@ -1,4 +1,5 @@
 using System;
+using Test.Weapon;
 
 [Serializable]
 public class GunFeatureContainerItem

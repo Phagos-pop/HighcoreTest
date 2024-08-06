@@ -1,5 +1,9 @@
+using Test.Abuility;
 
-public interface IDamageableCharacter
+namespace Test.Character
 {
-    public void ApplyDamage(float value);
+    public interface IDamageableCharacter
+    {
+        public void TakeDamage(DamageType type, float value);
+    }
 }

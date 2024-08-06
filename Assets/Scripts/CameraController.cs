@@ -1,3 +1,4 @@
+using Test.Character;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour

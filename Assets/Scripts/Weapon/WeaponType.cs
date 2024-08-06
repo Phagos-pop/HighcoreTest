@@ -1,7 +1,9 @@
-
-public enum WeaponType
+namespace Test.Weapon
 {
-    Pistol,
-    Rifle,
-    MachineGun
+    public enum WeaponType
+    {
+        Pistol,
+        Rifle,
+        MachineGun
+    }
 }

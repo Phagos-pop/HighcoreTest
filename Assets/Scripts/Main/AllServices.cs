@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using Test.Character;
+using Test.Weapon;
 using UnityEngine;
 
 public class AllServices : MonoBehaviour
@@ -15,7 +17,7 @@ public class AllServices : MonoBehaviour
 
     [SerializeField] private InputService _inputService;
     [SerializeField] private MainCharacter _mainCharacter;
-    [SerializeField] private List<Weapon> _weapons;
+    [SerializeField] private List<BaseWeapon> _weapons;
     [SerializeField] private GunFeatureContainer _gunContainer;
     [SerializeField] private CharacterContainer _characterContainer;
     [SerializeField] private EnemyCharacterContainer _enemyCharacterContainer;
@@ -23,7 +25,7 @@ public class AllServices : MonoBehaviour
 
     public IInputService InputService => _inputService;
     public MainCharacter MainCharacter => _mainCharacter;
-    public List<Weapon> Weapons => _weapons;
+    public List<BaseWeapon> Weapons => _weapons;
     public GunFeatureContainer GunContainer => _gunContainer;
     public CharacterContainer CharacterContainer => _characterContainer;
     public List<EnemyCharacter> EnemyCharacters => _enemyCharacters;
